@@ -1,0 +1,30 @@
+﻿hvigorw.bat : > hvigor [91mERROR: [31m00303312 Configuration Error
+At line:15 char:2023
++ ...  $env:Path; & "D:\FeverApps\DevEco Studio\tools\hvigor\bin\hvigorw.ba ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (> hvigor [91mE...iguration Error:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[31mError Message: Cannot find the corresponding SDK version under the specified SDK path. SDK path: D:/FeverApps/DevE
+co Studio/sdk/default.
+[31m
+* Try the following:
+  > Choose Help > Edit Custom Properties to open idea.properties, and check whether an SDK path is configured. If so, e
+nsure it points to the correct path and matches the built-in SDK version of DevEco Studio; otherwise, delete the custom
+ path.
+  > Ensure that the DEVECO_SDK_HOME environment variable points to the correct SDK path and matches the built-in SDK ve
+rsion of DevEco Studio.
+  > Check whether @ohos/hvigor-ohos-plugin or @ohos/hvigor dependencies are configured in the dependencies field of hvi
+gor-config.json5. If so, delete them. The current DevEco Studio uses the all-in-one installation mode and the built-in 
+hvigor plugins are used by default, requiring no additional configuration.
+  > More info: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-errorcode-00303-1#section515641
+975611
+[39m
+
+[31m* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+[39m
+> hvigor [91mERROR: BUILD FAILED in 3 s 124 ms [39m
+
+0 task in total: 0 executed, 0 up-to-date.

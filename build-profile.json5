@@ -1,24 +1,8 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "storeFile": "D:/schoollife/school-run-app.p12",
-          "storePassword": "0000001B904FEBFDB2818818AB36D64448CD86CDF944FE539F5185237E9196633294753B81158D5A9DCC43",
-          "keyAlias": "schoolrun-app",
-          "keyPassword": "0000001BEB5312FE371C2F4AA3C85CA5B377CB3D4BBE64ABF15E877761F29DB5420585618377F131FB86A3",
-          "signAlg": "SHA256withECDSA",
-          "profile": "D:/huawei.math.function/com.example.myapplication.mathRelease.p7b",
-          "certpath": "D:/huawei.math.function/com.example.myapplication.math.cer"
-        }
-      }
-    ],
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
         "targetSdkVersion": "26.0.0",
         "compatibleSdkVersion": "6.1.1(24)",
         "runtimeOS": "HarmonyOS",

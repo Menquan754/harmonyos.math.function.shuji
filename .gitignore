@@ -10,3 +10,27 @@
 /.clang-tidy
 **/.test
 /.appanalyzer
+
+# 签名与密钥：严禁上传
+*.p12
+*.cer
+*.p7b
+*.key
+*.pem
+*.jks
+*.keystore
+*.csr
+*.p8
+
+# 本地签名配置备份（含密钥口令）
+build-profile.signing.json5
+
+# 构建产物与日志
+*.hap
+*.app
+*.hsp
+*.har
+*.log
+
+# 应用市场分发图标（本地生成）
+shuji_app_icon_*.png

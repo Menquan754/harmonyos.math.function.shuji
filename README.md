@@ -105,17 +105,24 @@ That is the whole flow: **Open -> Auto-sign -> Run**.
 ohpm install
 ```
 
-### Command-line build
+### Build from DevEco Studio
 
-```bash
-hvigorw assembleHap --mode module -p product=default -p buildMode=debug --no-daemon
-```
-
-The unsigned artifact is written to:
+Use `Build > Build Hap(s)/APP(s) > Build Hap(s)`. The unsigned artifact is written to:
 
 ```text
 entry/build/default/outputs/default/entry-default-unsigned.hap
 ```
+
+A clean clone builds without any signing configuration; hvigor prints
+`WARN: No signingConfig found for product default`, which is expected.
+The repository does not ship `hvigorw` wrapper scripts; command-line builds
+should use the hvigor bundled with DevEco Studio.
+
+### Troubleshooting
+
+- Keep the project path free of apostrophes and non-ASCII characters. Hvigor rejects paths such as
+  `C:\Users\su'tian'yi\...`; use a short ASCII path instead.
+- If the IDE reports missing `@ohos/hypium` or `@ohos/hamock`, run `ohpm install` and sync again.
 
 ---
 

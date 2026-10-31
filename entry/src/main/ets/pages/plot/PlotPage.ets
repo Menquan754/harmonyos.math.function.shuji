@@ -1,9 +1,8 @@
 /**
- * 绘图页：输入函数（可带参数），多曲线同时绘制；
- * 参数滑条联动；点选读值；同族函数参数动画；
- * 支持 图形 / 图形+公式 / 公式 三种分栏模式探索规律；
- * 支持多绘图页保存/新建/切换（Preferences 持久化）；
- * 单指平移带惯性、双指缩放；坐标轴带刻度数字与箭头标签。
+ * @file PlotPage.ets
+ * @brief Multi-curve function plotter with pan, zoom, sliders and split views.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { ExprEngine } from '../../core/expression/ExprEngine';
 import { PlotEngine, Viewport, PlotPoint } from '../../core/renderer/PlotEngine';

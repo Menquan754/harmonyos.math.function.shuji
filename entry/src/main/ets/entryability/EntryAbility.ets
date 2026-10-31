@@ -1,3 +1,9 @@
+/**
+ * @file EntryAbility.ets
+ * @brief App entry ability that loads the main page and applies the color mode.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';

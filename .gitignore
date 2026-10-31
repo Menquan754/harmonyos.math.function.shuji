@@ -1,36 +1,75 @@
-/node_modules
-/oh_modules
-/local.properties
-/.idea
-**/build
-/.hvigor
-.cxx
-/.clangd
-/.clang-format
-/.clang-tidy
-**/.test
-/.appanalyzer
+# ---------------------------------------------------------------------------
+# HarmonyOS Stage model build artifacts and caches
+# ---------------------------------------------------------------------------
+build/
+**/build/
+.hvigor/
+oh_modules/
+node_modules/
+.preview/
+**/.preview/
+.cxx/
+.clangd
+.clang-format
+.clang-tidy
+**/.test/
+.appanalyzer/
 
-# 签名与密钥：严禁上传
+# ---------------------------------------------------------------------------
+# IDE / editor files
+# ---------------------------------------------------------------------------
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Machine-specific configuration
+# ---------------------------------------------------------------------------
+local.properties
+**/local.properties
+
+# ---------------------------------------------------------------------------
+# Signing material - NEVER commit these
+# ---------------------------------------------------------------------------
 *.p12
 *.cer
 *.p7b
+*.csr
 *.key
 *.pem
 *.jks
 *.keystore
-*.csr
 *.p8
-
-# 本地签名配置备份（含密钥口令）
 build-profile.signing.json5
 
-# 构建产物与日志
+# ---------------------------------------------------------------------------
+# Build outputs and logs
+# ---------------------------------------------------------------------------
 *.hap
 *.app
 *.hsp
 *.har
 *.log
 
-# 应用市场分发图标（本地生成）
+# ---------------------------------------------------------------------------
+# AppGallery distribution icons generated locally
+# ---------------------------------------------------------------------------
 shuji_app_icon_*.png
+
+# ---------------------------------------------------------------------------
+# Local caches, generated test data and exported plot data
+# ---------------------------------------------------------------------------
+.cache/
+test-data/
+*_testdata.json
+plot_pages.local.json
+*.local.json
+
+# ---------------------------------------------------------------------------
+# Lock file policy:
+# oh-package-lock.json5 is intentionally tracked for reproducible builds.
+# If a CI pipeline must resolve dependencies itself, uncomment the next line.
+# ---------------------------------------------------------------------------
+# oh-package-lock.json5

@@ -1,6 +1,8 @@
 /**
- * 三端响应式断点：手机 / 平板 / PC（2in1）。
- * 页面按当前窗口宽度切换导航形态、内容宽度与绘图分栏比例。
+ * @file Responsive.ets
+ * @brief Breakpoints and layout limits for phone, tablet and PC screens.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 export class Responsive {
   /** 手机上限（vp），小于该值使用底部导航 */

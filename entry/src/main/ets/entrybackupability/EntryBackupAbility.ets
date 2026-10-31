@@ -1,3 +1,9 @@
+/**
+ * @file EntryBackupAbility.ets
+ * @brief Backup extension ability for the app's local data.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { BackupExtensionAbility, BundleVersion } from '@kit.CoreFileKit';
 

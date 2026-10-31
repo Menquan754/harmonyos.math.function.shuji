@@ -1,6 +1,8 @@
 /**
- * 小派智能体内核：意图路由 + 知识库检索 + 计算引擎联动。
- * 全部离线完成；远程大模型为可选增强（由设置页开关，此处仅预留对接点）。
+ * @file AgentCore.ets
+ * @brief Offline intent router, knowledge search and calculator bridge for Xiao Pai.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { ExprEngine, ParseError } from '../expression/ExprEngine';
 import { NumericKit, IndefResult, SeriesResult } from '../numeric/NumericKit';

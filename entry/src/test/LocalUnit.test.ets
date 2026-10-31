@@ -1,3 +1,9 @@
+/**
+ * @file LocalUnit.test.ets
+ * @brief Local unit test template for the entry module.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
 
 export default function localUnitTest() {

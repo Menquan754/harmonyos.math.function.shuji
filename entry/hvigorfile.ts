@@ -1,3 +1,9 @@
+/**
+ * @file hvigorfile.ts
+ * @brief HAP module-level Hvigor build configuration.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { hapTasks } from '@ohos/hvigor-ohos-plugin';
 
 export default {

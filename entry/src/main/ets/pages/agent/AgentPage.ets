@@ -1,5 +1,8 @@
 /**
- * 小派对话页：离线智能体，答疑 / 使用指引 / 计算联动 / 功能建议。
+ * @file AgentPage.ets
+ * @brief Xiao Pai chat screen for offline Q&A, guidance and calculation help.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { AgentCore, AgentReply } from '../../core/agent/AgentCore';
 import { Theme } from '../../core/theme/Theme';

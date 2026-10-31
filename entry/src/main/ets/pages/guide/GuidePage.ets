@@ -1,6 +1,8 @@
 /**
- * 使用指引：全屏覆盖层，分步介绍四大 Tab 与常用手势。
- * 由 Index 控制显隐（首启自动展示一次 + "?" 按钮 + 设置页入口）。
+ * @file GuidePage.ets
+ * @brief Full-screen onboarding guide for the four tabs and common gestures.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { Theme } from '../../core/theme/Theme';
 import { Responsive } from '../../core/layout/Responsive';

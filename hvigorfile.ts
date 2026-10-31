@@ -1,3 +1,9 @@
+/**
+ * @file hvigorfile.ts
+ * @brief Project-level Hvigor build configuration.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { appTasks } from '@ohos/hvigor-ohos-plugin';
 
 export default {

@@ -1,6 +1,8 @@
 /**
- * 应用主框架：底部 Tabs —— 绘图 / 小派 / 计算 / 设置
- * 全屏使用指引覆盖层（首启自动展示一次 + 可拖动/可隐藏的悬浮 "?" + 设置页入口）
+ * @file Index.ets
+ * @brief Root shell with bottom or side navigation and the floating help overlay.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { PlotPage } from './plot/PlotPage';
 import { AgentPage } from './agent/AgentPage';

@@ -1,6 +1,8 @@
 /**
- * 主题工具：基于 AppStorage 的 darkMode 标志返回深浅两套配色。
- * 全部页面/画布统一从这里取色，深色模式下自动切换。
+ * @file Theme.ets
+ * @brief Light and dark color palettes shared by all pages and canvases.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 type ThemeListener = (dark: boolean) => void;
 

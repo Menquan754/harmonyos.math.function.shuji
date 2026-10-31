@@ -1,6 +1,8 @@
 /**
- * 绘图引擎：对表达式按视口采样生成曲线数据，
- * 并与屏幕坐标互相转换。纯计算逻辑，不依赖 UI。
+ * @file PlotEngine.ets
+ * @brief Samples expressions into screen curves and maps math to screen coordinates.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { ExprEngine } from '../expression/ExprEngine';
 

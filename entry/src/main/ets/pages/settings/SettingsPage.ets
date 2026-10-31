@@ -1,5 +1,8 @@
 /**
- * 设置页：深色模式 / 悬浮帮助按钮 / 使用指引入口 / 数据清空 / 关于信息。
+ * @file SettingsPage.ets
+ * @brief Settings for theme, floating help, guide entry and data reset.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { AppStore } from '../../core/storage/AppStore';
 import { Theme } from '../../core/theme/Theme';

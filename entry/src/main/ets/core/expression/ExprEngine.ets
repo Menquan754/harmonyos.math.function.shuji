@@ -1,9 +1,11 @@
 /**
- * 表达式引擎：词法 -> 语法 -> AST -> 求值
- * 纯 ArkTS 实现，不依赖任何第三方库，离线可用。
- * 支持：+ - * / ^ ( ) 隐式乘法(2x, xsin(x))、一元负号、常数 pi/e、
- *      函数 sin cos tan asin acos atan sinh cosh tanh exp ln log lg sqrt abs floor ceil sign
- *      自变量 x 与任意符号参数（如 a b c n k）。
+ * @file ExprEngine.ets
+ * @brief Recursive-descent parser and evaluator for mathematical expressions.
+ * @author Menquan754
+ * @date 2026-10-31
+ *
+ * Supports implicit multiplication, pi/e constants, parameters and scientific functions.
+ * Pure ArkTS, no third-party dependencies, fully offline.
  */
 
 enum TokKind {

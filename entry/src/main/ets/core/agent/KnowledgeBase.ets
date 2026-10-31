@@ -1,6 +1,8 @@
 /**
- * 内置知识库：大学数学主干内容答疑（高数/线代/概率统计/复变/数值计算）+ 软件使用指引。
- * 离线可用，随应用打包。
+ * @file KnowledgeBase.ets
+ * @brief Built-in offline math knowledge base with 120+ Q&A entries and aliases.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 
 export class KbEntry {

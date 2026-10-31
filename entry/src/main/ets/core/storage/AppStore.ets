@@ -1,6 +1,8 @@
 /**
- * 本地存储封装：设置项（Preferences）。
- * 采用轻量 Preferences（键值）存储，离线单机运行无需外部数据库。
+ * @file AppStore.ets
+ * @brief Local preferences, settings and multi-page plot persistence.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { preferences } from '@kit.ArkData';
 import { common, ConfigurationConstant } from '@kit.AbilityKit';

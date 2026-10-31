@@ -1,7 +1,8 @@
 /**
- * 数值计算工具库：求根、定积分（含变限/不定积分匹配）、数值微分、
- * 级数（部分和与无穷级数收敛粗判）、常微分方程(RK4)与方向场。
- * 支撑"计算"页与"小派"的即算即答，离线运行。
+ * @file NumericKit.ets
+ * @brief Numerical routines for roots, integrals, derivatives, series and ODEs.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 
 /** 不定积分匹配结果（符号原函数表 + 数值抽查） */

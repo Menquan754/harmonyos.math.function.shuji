@@ -1,3 +1,9 @@
+/**
+ * @file Ability.test.ets
+ * @brief Instrumented test suite template for the entry ability.
+ * @author Menquan754
+ * @date 2026-10-31
+ */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
 

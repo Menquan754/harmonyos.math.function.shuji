@@ -1,6 +1,8 @@
 /**
- * 计算页：求根 / 定积分（含步骤）/ 不定积分 / 变限积分 / 级数 / 无穷级数 /
- * 曲线积分 / 曲面积分 / 方向场 / 导数值 / 极限与极值。
+ * @file CalcPage.ets
+ * @brief Calculation workspace with eleven numeric tools and step-by-step output.
+ * @author Menquan754
+ * @date 2026-10-31
  */
 import { ExprEngine } from '../../core/expression/ExprEngine';
 import { NumericKit, IndefResult, SeriesResult, IntegralSteps } from '../../core/numeric/NumericKit';

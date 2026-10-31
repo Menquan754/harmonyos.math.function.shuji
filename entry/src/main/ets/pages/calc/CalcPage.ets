@@ -1,6 +1,20 @@
 /**
  * @file CalcPage.ets
- * @brief Calculation workspace with eleven numeric tools and step-by-step output.
+ * @brief Numeric calculator tab with eleven tools and step-by-step output.
+ *
+ * Responsibilities
+ *   - Offers eleven tools: roots, definite integral, indefinite integral,
+ *     variable-limit integral, series, infinite series, line integral, surface
+ *     integral, direction field, derivative value, and limits / extrema.
+ *   - Validates input (clamped loop counts, parsed expressions) and prints the
+ *     intermediate steps and conclusions produced by NumericKit.
+ *   - Caps its width at Responsive.MAX_CALC and keeps each tool's input state
+ *     independent while switching tool tabs.
+ *
+ * Consumers
+ *   - pages/Index.ets as the third tab; expressions are parsed by ExprEngine
+ *     and evaluated by NumericKit.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

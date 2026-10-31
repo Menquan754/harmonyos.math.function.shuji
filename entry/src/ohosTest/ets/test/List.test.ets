@@ -1,6 +1,15 @@
 /**
  * @file List.test.ets
- * @brief Aggregates the instrumented test suites for the entry module.
+ * @brief Entry point that registers every instrumented test suite.
+ *
+ * Responsibilities
+ *   - Imports each on-device suite and calls it, so `ohosTest` runs discover
+ *     all cases from one file.
+ *   - Add a new import plus a call here whenever another suite is added.
+ *
+ * Consumers
+ *   - The instrumented test runner, which needs an emulator or a real device.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

@@ -1,6 +1,20 @@
 /**
  * @file Index.ets
- * @brief Root shell with bottom or side navigation and the floating help overlay.
+ * @brief Root page: tab navigation, adaptive shell and floating help button.
+ *
+ * Responsibilities
+ *   - Hosts the four tabs (Plot, Xiao Pai, Calc, Settings) and switches the
+ *     bar between bottom tabs on phones, a 96vp rail on tablets and a 200vp
+ *     rail with subtitles on PC as Responsive thresholds are crossed.
+ *   - Listens to `windowSizeChange` and `onAreaChange`, so tablet rotation or
+ *     desktop window resizing re-layouts immediately.
+ *   - Owns the draggable "?" button: a 750ms long press hides it and the
+ *     settings switch restores it through AppStore's change broadcast.
+ *
+ * Consumers
+ *   - Loaded by EntryAbility; it renders PlotPage, AgentPage, CalcPage,
+ *     SettingsPage and the GuidePage overlay.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

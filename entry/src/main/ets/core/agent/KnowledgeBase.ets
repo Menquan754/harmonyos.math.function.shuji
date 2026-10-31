@@ -1,6 +1,19 @@
 /**
  * @file KnowledgeBase.ets
- * @brief Built-in offline math knowledge base with 120+ Q&A entries and aliases.
+ * @brief Built-in offline math knowledge base used by the Xiao Pai chat tab.
+ *
+ * Responsibilities
+ *   - Stores 120+ curated Q&A entries covering functions, calculus, linear
+ *     algebra, probability and app usage; each entry is tagged with keywords.
+ *   - Expands English words and aliases through the SYNONYMS table so a
+ *     question can be asked in either language.
+ *   - Exposes `all()` and `search(text)`, ranking hits by keyword length so a
+ *     longer, more specific match wins.
+ *
+ * Consumers
+ *   - core/agent/AgentCore.ets. Entries are plain data, so new content can be
+ *     added without touching any other module.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

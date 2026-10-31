@@ -1,6 +1,20 @@
 /**
  * @file AgentCore.ets
- * @brief Offline intent router, knowledge search and calculator bridge for Xiao Pai.
+ * @brief Answer engine behind the Xiao Pai chat tab, fully offline.
+ *
+ * Responsibilities
+ *   - Classifies each user message into an intent: greeting, knowledge
+ *     question, usage question, or a concrete calculation.
+ *   - Extracts the expression, variable and bounds from natural-language
+ *     input such as "积分 x^2 从 0 到 1".
+ *   - Answers concepts through KnowledgeBase and solves roots, integrals,
+ *     series and derivatives through NumericKit / ExprEngine, returning an
+ *     AgentReply (intent, title, text) for the UI to render.
+ *
+ * Consumers
+ *   - pages/agent/AgentPage.ets calls `AgentCore.ask(text)`. No network
+ *     request is ever made; every answer is computed on the device.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

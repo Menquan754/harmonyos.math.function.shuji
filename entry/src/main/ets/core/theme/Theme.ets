@@ -1,6 +1,18 @@
 /**
  * @file Theme.ets
- * @brief Light and dark color palettes shared by all pages and canvases.
+ * @brief Central light and dark palette used by every page and canvas.
+ *
+ * Responsibilities
+ *   - Exposes static colours (background, card, text, axis, grid, primary, ...)
+ *     so ArkUI components and Canvas 2D drawing share one visual language.
+ *   - `subscribe` / `unsubscribe` / `broadcast` notify pages when dark mode
+ *     toggles, letting each page refresh its local state and rebuild.
+ *   - `lineColor()` is the hook for per-theme curve colour tuning.
+ *
+ * Consumers
+ *   - All pages plus core/storage/AppStore.ets. Colours are plain hex strings,
+ *     so no component context is needed to read them.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

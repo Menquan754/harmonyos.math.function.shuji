@@ -1,6 +1,20 @@
 /**
  * @file Responsive.ets
- * @brief Breakpoints and layout limits for phone, tablet and PC screens.
+ * @brief Single source of truth for phone, tablet and PC breakpoints.
+ *
+ * Responsibilities
+ *   - Defines the width thresholds that choose a navigation shape: PHONE_MAX
+ *     (600vp), PC_MIN (1200vp), and SPLIT_MIN (1000vp) for side-by-side views.
+ *   - Defines reading limits MAX_TEXT (900vp) and MAX_CALC (1120vp) so forms do
+ *     not stretch across very wide windows.
+ *   - `level(width)` returns 0 for phone, 1 for tablet and 2 for PC; changing a
+ *     number here updates every page at once.
+ *
+ * Consumers
+ *   - pages/Index.ets chooses the tab bar from `level`, PlotPage decides when
+ *     to show its formula panel beside the canvas, and every page caps its
+ *     content width with MAX_TEXT or MAX_CALC.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

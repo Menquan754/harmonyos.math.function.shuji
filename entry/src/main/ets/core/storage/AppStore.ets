@@ -1,6 +1,19 @@
 /**
  * @file AppStore.ets
- * @brief Local preferences, settings and multi-page plot persistence.
+ * @brief Local persistence for preferences, plot pages and the help button.
+ *
+ * Responsibilities
+ *   - Wraps the `xp_settings` preferences store and a `plot_pages.json` file
+ *     (used for page sets, because preferences limit single-value size).
+ *   - Exposes typed getters and setters for dark mode, first launch, grid and
+ *     sample options, help-button visibility and its last position.
+ *   - Broadcasts help-button changes to subscribers so the settings switch and
+ *     the floating button stay in sync; `clearAllData()` resets everything.
+ *
+ * Consumers
+ *   - pages/Index.ets, PlotPage, SettingsPage and GuidePage. All data stays in
+ *     the app sandbox; nothing is uploaded or shared.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

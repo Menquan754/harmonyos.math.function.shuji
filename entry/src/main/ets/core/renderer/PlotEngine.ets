@@ -1,6 +1,19 @@
 /**
  * @file PlotEngine.ets
- * @brief Samples expressions into screen curves and maps math to screen coordinates.
+ * @brief Turns an expression AST into drawable curve samples.
+ *
+ * Responsibilities
+ *   - Viewport describes the visible math window (xMin/xMax/yMin/yMax) and
+ *     reports its width and height.
+ *   - `sample(ast, viewport, count, params)` walks that window and returns
+ *     PlotPoints; NaN or infinite values are flagged invisible so the renderer
+ *     breaks the curve instead of drawing a false segment.
+ *
+ * Consumers
+ *   - pages/plot/PlotPage.ets. Screen mapping, grid drawing and gestures live
+ *     in the page; this module only produces math-space samples and is free of
+ *     UI dependencies.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

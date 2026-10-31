@@ -1,6 +1,20 @@
 /**
  * @file NumericKit.ets
- * @brief Numerical routines for roots, integrals, derivatives, series and ODEs.
+ * @brief Numeric algorithms behind every calculation tool of the app.
+ *
+ * Responsibilities
+ *   - Finds roots by interval scan plus bisection, integrates with composite
+ *     Simpson (optionally returning per-step data) and takes central
+ *     differences for derivatives.
+ *   - Evaluates line and surface integrals, direction fields and RK4
+ *     trajectories, plus 3x3 determinant / inverse helpers.
+ *   - Matches indefinite integrals against a built-in antiderivative table,
+ *     verifies them numerically, and sums finite and infinite series.
+ *
+ * Consumers
+ *   - pages/calc/CalcPage.ets and core/agent/AgentCore.ets. Every routine is
+ *     a pure function over callbacks, so it is safe to unit-test on the host.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

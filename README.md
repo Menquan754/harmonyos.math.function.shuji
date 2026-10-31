@@ -30,7 +30,7 @@ Shuji (Chinese: 数迹, "math traces") is a single-module HarmonyOS application 
 |           `-- layered_image.json       # Layered icon descriptor
 |-- entry/
 |   |-- build-profile.json5              # Module build options (no signing data)
-|   |-- hvigorfile.ts                    # HAP build task definition
+|   |-- hvigorfile.ts                    # Registers hapTasks for this HAP module
 |   |-- obfuscation-rules.txt            # Release obfuscation rules
 |   |-- oh-package.json5                 # Module dependency manifest
 |   `-- src/
@@ -38,32 +38,32 @@ Shuji (Chinese: 数迹, "math traces") is a single-module HarmonyOS application 
 |       |   |-- module.json5             # Entry module, abilities, device types
 |       |   |-- ets/
 |       |   |   |-- entryability/
-|       |   |   |   `-- EntryAbility.ets            # App entry; loads pages/Index
+|       |   |   |   `-- EntryAbility.ets            # Loads pages/Index; follows system theme
 |       |   |   |-- entrybackupability/
-|       |   |   |   `-- EntryBackupAbility.ets      # Backup extension ability
+|       |   |   |   `-- EntryBackupAbility.ets      # System backup/restore extension
 |       |   |   |-- core/
-|       |   |   |   |-- agent/AgentCore.ets         # Intent routing and reply building
-|       |   |   |   |-- agent/KnowledgeBase.ets     # Built-in offline Q&A entries
+|       |   |   |   |-- agent/AgentCore.ets         # Intent routing and offline answers
+|       |   |   |   |-- agent/KnowledgeBase.ets     # 120+ keyword-tagged Q&A entries
 |       |   |   |   |-- expression/ExprEngine.ets  # Expression parser and evaluator
 |       |   |   |   |-- layout/Responsive.ets       # Phone/tablet/PC breakpoints
 |       |   |   |   |-- numeric/NumericKit.ets      # Roots, integrals, series, RK4
-|       |   |   |   |-- renderer/PlotEngine.ets     # Curve sampling and transforms
-|       |   |   |   |-- storage/AppStore.ets        # Preferences and saved plot pages
-|       |   |   |   `-- theme/Theme.ets             # Light/dark color palettes
+|       |   |   |   |-- renderer/PlotEngine.ets     # Samples AST into curve points
+|       |   |   |   |-- storage/AppStore.ets        # Preferences, plot pages, help state
+|       |   |   |   `-- theme/Theme.ets             # Light/dark palette and broadcast
 |       |   |   `-- pages/
-|       |   |       |-- Index.ets                   # Root shell and navigation
-|       |   |       |-- plot/PlotPage.ets           # Multi-curve function plotter
+|       |   |       |-- Index.ets                   # Tabs, adaptive shell, floating help
+|       |   |       |-- plot/PlotPage.ets           # Plotter, gestures, pages, export
 |       |   |       |-- agent/AgentPage.ets         # Xiao Pai chat screen
-|       |   |       |-- calc/CalcPage.ets           # Eleven numeric tools
-|       |   |       |-- settings/SettingsPage.ets   # Theme, help, data reset
-|       |   |       `-- guide/GuidePage.ets         # Onboarding overlay
+|       |   |       |-- calc/CalcPage.ets           # Eleven numeric tools with steps
+|       |   |       |-- settings/SettingsPage.ets   # Theme, help button, data reset
+|       |   |       `-- guide/GuidePage.ets         # First-launch onboarding overlay
 |       |   |-- resources/               # Strings, colors, icons, page list
 |       |   `-- mock/mock-config.json5   # Mock configuration for local tests
 |       |-- test/                        # Local unit tests
 |       `-- ohosTest/                    # Instrumented tests
 |-- hvigor/
 |   `-- hvigor-config.json5              # Hvigor runtime options
-|-- hvigorfile.ts                       # Project-level build script
+|-- hvigorfile.ts                       # Registers appTasks for all modules
 |-- build-profile.json5                 # App products and build modes (unsigned)
 |-- oh-package.json5                    # Root dependency manifest
 |-- oh-package-lock.json5               # Locked dependency versions (reproducible)
@@ -164,23 +164,39 @@ The calculator tab provides eleven independent tools, each with a step-by-step e
 
 ---
 
-## Source header convention
+## Source file headers
 
-Every `.ets` and `.ts` file starts with a short English header:
+Every `.ets` and `.ts` file opens with an English header that explains what the
+file is responsible for, before any import or code:
 
 ```ts
 /**
- * @file CalcPage.ets
- * @brief Calculation workspace with eleven numeric tools and step-by-step output.
+ * @file ExprEngine.ets
+ * @brief Parser and evaluator shared by plotting, calculation and chat.
+ *
+ * Responsibilities
+ *   - Tokenises infix input with a recursive-descent parser and builds an AST.
+ *   - Evaluates an AST for a given x plus a parameter map of user variables.
+ *   - `parseWithParams(text)` also collects free parameter names for sliders.
+ *
+ * Consumers
+ *   - PlotEngine, PlotPage, CalcPage and AgentCore all parse with this module.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */
 ```
 
 - `@file` - file name.
-- `@brief` - one sentence, at most 15 English words.
+- `@brief` - one sentence describing the file's role in the app.
+- `Responsibilities` - 2-4 bullets listing the concrete capabilities the file
+  provides, not the history of edits.
+- `Consumers` - who imports or runs this file, so callers can be found quickly.
 - `@author` - maintainer name.
 - `@date` - creation or last meaningful update date (`YYYY-MM-DD`).
+
+Inline comments stay in Chinese because the UI copy is Chinese; the headers are
+English so that an international reader can navigate the code base.
 
 ---
 

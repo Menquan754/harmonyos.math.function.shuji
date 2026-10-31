@@ -1,6 +1,20 @@
 /**
  * @file SettingsPage.ets
- * @brief Settings for theme, floating help, guide entry and data reset.
+ * @brief Settings tab for theme, floating help, guide and local data.
+ *
+ * Responsibilities
+ *   - Toggles dark mode (applied instantly through Theme.broadcast) and the
+ *     floating "?" button, and explains the app architecture and offline
+ *     signing inside collapsible sections.
+ *   - Reopens the onboarding guide and clears all local settings and plot
+ *     pages after a confirmation dialog.
+ *   - Mirrors help-button changes made by a long press on the main page, using
+ *     `AppStore.subscribeHelp()`.
+ *
+ * Consumers
+ *   - pages/Index.ets as the fourth tab; the guide is reopened through the
+ *     `onShowGuide` callback supplied by the shell.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

@@ -1,6 +1,19 @@
 /**
  * @file EntryAbility.ets
- * @brief App entry ability that loads the main page and applies the color mode.
+ * @brief Launcher ability that creates the main window and loads the UI.
+ *
+ * Responsibilities
+ *   - Loads `pages/Index` into the window stage and logs a failure if the
+ *     content cannot be created.
+ *   - Leaves the colour mode at COLOR_MODE_NOT_SET so the app follows the
+ *     device light/dark setting until the user overrides it in Settings.
+ *   - Implements the standard lifecycle callbacks (create, foreground,
+ *     background, destroy) for logging purposes.
+ *
+ * Consumers
+ *   - Declared as the launcher ability in entry/src/main/module.json5; it runs
+ *     once per app process and hands control to the Index page.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

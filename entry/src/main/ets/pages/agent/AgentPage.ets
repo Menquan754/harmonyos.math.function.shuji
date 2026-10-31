@@ -1,6 +1,18 @@
 /**
  * @file AgentPage.ets
- * @brief Xiao Pai chat screen for offline Q&A, guidance and calculation help.
+ * @brief Xiao Pai chat tab: offline maths Q&A and quick calculations.
+ *
+ * Responsibilities
+ *   - Keeps the message list, input box and quick-question chips, and forwards
+ *     every message to `AgentCore.ask()`.
+ *   - Shows a short thinking state, renders replies as chat bubbles, and
+ *     presents computed results such as integrals, series and derivatives.
+ *   - Caps its content with Responsive.MAX_TEXT so long answers stay readable
+ *     on tablets and PC.
+ *
+ * Consumers
+ *   - pages/Index.ets as the second tab. The page performs no network I/O.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

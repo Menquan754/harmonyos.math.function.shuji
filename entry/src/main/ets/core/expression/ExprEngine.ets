@@ -1,11 +1,24 @@
 /**
  * @file ExprEngine.ets
- * @brief Recursive-descent parser and evaluator for mathematical expressions.
+ * @brief Parser and evaluator shared by plotting, calculation and chat.
+ *
+ * Responsibilities
+ *   - Tokenises infix input with a recursive-descent parser and builds an AST,
+ *     reporting syntax problems as ParseError with a readable message.
+ *   - Supports implicit multiplication, the constants pi/e, user parameters
+ *     and the scientific function library (sin, ln, gamma, ...).
+ *   - `parseWithParams(text)` also collects the free parameter names (a, k,
+ *     n, ...) so the plot page can create the matching sliders.
+ *
+ * Consumers
+ *   - core/renderer/PlotEngine.ets, pages/plot/PlotPage.ets,
+ *     pages/calc/CalcPage.ets and core/agent/AgentCore.ets. All of them share
+ *     one grammar, so an expression accepted in one tab works in the others.
+ *
+ * Pure ArkTS, no third-party dependencies, fully offline.
+ *
  * @author Menquan754
  * @date 2026-10-31
- *
- * Supports implicit multiplication, pi/e constants, parameters and scientific functions.
- * Pure ArkTS, no third-party dependencies, fully offline.
  */
 
 enum TokKind {

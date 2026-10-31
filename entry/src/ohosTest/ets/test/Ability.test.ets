@@ -1,6 +1,16 @@
 /**
  * @file Ability.test.ets
  * @brief Instrumented test suite template for the entry ability.
+ *
+ * Responsibilities
+ *   - Uses the Hypium describe / it structure to exercise ability behaviour on
+ *     a real device or emulator.
+ *   - Ships with the generated sample case; extend it with app-specific checks
+ *     before relying on it.
+ *
+ * Consumers
+ *   - src/ohosTest/ets/test/List.test.ets imports and invokes this suite.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

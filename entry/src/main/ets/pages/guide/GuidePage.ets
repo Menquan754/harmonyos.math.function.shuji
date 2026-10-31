@@ -1,6 +1,19 @@
 /**
  * @file GuidePage.ets
- * @brief Full-screen onboarding guide for the four tabs and common gestures.
+ * @brief Full-screen onboarding guide for the four tabs and key gestures.
+ *
+ * Responsibilities
+ *   - Holds the GUIDE_STEPS content: plotting basics, parameter animation and
+ *     plot pages, Xiao Pai usage, calculator tools, and settings.
+ *   - Renders a paged overlay with skip / previous / next controls and closes
+ *     through the `onClose` callback supplied by the shell.
+ *   - Appears automatically on first launch (flag stored in AppStore) and on
+ *     demand from Settings or the floating help button.
+ *
+ * Consumers
+ *   - pages/Index.ets, which keeps the overlay above the tab content in a
+ *     Stack and limits the card width on tablets and PC.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

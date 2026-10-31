@@ -1,6 +1,16 @@
 /**
  * @file LocalUnit.test.ets
- * @brief Local unit test template for the entry module.
+ * @brief Template suite for local, on-host unit tests (Hypium).
+ *
+ * Responsibilities
+ *   - Demonstrates the beforeAll / beforeEach / afterEach / afterAll hooks and
+ *     one sample `it` case; replace the sample with real assertions.
+ *   - Runs without a device, which makes it a convenient place to cover pure
+ *     helpers such as ExprEngine and NumericKit.
+ *
+ * Consumers
+ *   - src/test/List.test.ets imports and invokes this suite.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */

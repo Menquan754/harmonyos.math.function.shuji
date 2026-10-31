@@ -1,6 +1,20 @@
 /**
  * @file PlotPage.ets
- * @brief Multi-curve function plotter with pan, zoom, sliders and split views.
+ * @brief Function plotting workspace with gestures, parameters and pages.
+ *
+ * Responsibilities
+ *   - Parses user input into curves; each function keeps its own colour, line
+ *     width and visibility, and can be selected to refill the input box.
+ *   - Draws on a Canvas 2D context with grid, axes, pan, pinch zoom, inertia,
+ *     tap-to-inspect read-out and adaptive value labels.
+ *   - Provides parameter sliders, parameter animation, named plot pages and
+ *     PNG export, and places the formula panel beside the canvas when the
+ *     window is at least Responsive.SPLIT_MIN wide.
+ *
+ * Consumers
+ *   - pages/Index.ets as the first tab. Maths come from ExprEngine and
+ *     PlotEngine, persistence from AppStore and colours from Theme.
+ *
  * @author Menquan754
  * @date 2026-10-31
  */
